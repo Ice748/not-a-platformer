@@ -1,5 +1,10 @@
-# Not a Platformer
+<div align="center">
+
+<img width="1234" height="640" alt="Not a Platformer Logo" src="https://github.com/user-attachments/assets/d7c09f6d-2e28-4526-b4ee-b525f477b684" />
+
 Not a Platformer is a classic retro adventure. You play as a knight named **Plinky**, and your mission is simple: save the princess. Don't worry, this is definitely NOT one of those unfair rage games... ***or is it?***
+
+</div>
 
 ---
 
