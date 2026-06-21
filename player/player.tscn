@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://52i60rx5qlt"]
+
+[ext_resource type="Material" uid="uid://515isevifox3" path="res://materials/player_color.tres" id="1_qjkh3"]
+[ext_resource type="Material" uid="uid://jrv21al0qdli" path="res://materials/white.tres" id="2_g6k8r"]
+[ext_resource type="Material" uid="uid://cpipfur01jodg" path="res://materials/black.tres" id="3_boad6"]
+[ext_resource type="Texture2D" uid="uid://dww55a1b6bmxu" path="res://assets/smile.png" id="4_rgyib"]
+[ext_resource type="Material" uid="uid://c66amrkgs23xi" path="res://materials/wood.tres" id="5_hg6s5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8t03j"]
+radius = 0.763647
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Body" type="CSGSphere3D" parent="Body"]
+material = ExtResource("1_qjkh3")
+
+[node name="RightLeg" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.75, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="LeftLeg" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.75, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="RightHand" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, -0.25, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="LeftHand" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, -0.25, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="RightEye" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.15, -0.35)
+radius = 0.12
+material = ExtResource("2_g6k8r")
+
+[node name="Pupil" type="CSGSphere3D" parent="Body/RightEye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0868313)
+radius = 0.05
+material = ExtResource("3_boad6")
+
+[node name="LeftEye" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.15, -0.35)
+radius = 0.12
+material = ExtResource("2_g6k8r")
+
+[node name="Pupil" type="CSGSphere3D" parent="Body/LeftEye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0868313)
+radius = 0.05
+material = ExtResource("3_boad6")
+
+[node name="Smile" type="Sprite3D" parent="Body"]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, -0.115504, -0.493451)
+texture = ExtResource("4_rgyib")
+
+[node name="Helmet" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Combiner" type="CSGCombiner3D" parent="Helmet"]
+
+[node name="Body" type="CSGSphere3D" parent="Helmet/Combiner"]
+material = ExtResource("5_hg6s5")
+
+[node name="Subtract" type="CSGSphere3D" parent="Helmet/Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085, -0.115)
+operation = 2
+radius = 0.45
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.150804, 0)
+shape = SubResource("SphereShape3D_8t03j")
