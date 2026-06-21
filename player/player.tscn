@@ -1,78 +1,292 @@
-[gd_scene load_steps=7 format=3 uid="uid://52i60rx5qlt"]
+[gd_scene load_steps=13 format=3 uid="uid://52i60rx5qlt"]
 
+[ext_resource type="Script" uid="uid://cikia54rs4i1c" path="res://player/player.gd" id="1_g6k8r"]
 [ext_resource type="Material" uid="uid://515isevifox3" path="res://materials/player_color.tres" id="1_qjkh3"]
 [ext_resource type="Material" uid="uid://jrv21al0qdli" path="res://materials/white.tres" id="2_g6k8r"]
 [ext_resource type="Material" uid="uid://cpipfur01jodg" path="res://materials/black.tres" id="3_boad6"]
-[ext_resource type="Texture2D" uid="uid://dww55a1b6bmxu" path="res://assets/smile.png" id="4_rgyib"]
+[ext_resource type="Texture2D" uid="uid://dke385fd3gmb1" path="res://assets/smile.png" id="4_rgyib"]
 [ext_resource type="Material" uid="uid://c66amrkgs23xi" path="res://materials/wood.tres" id="5_hg6s5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8t03j"]
 radius = 0.763647
 
+[sub_resource type="Animation" id="Animation_g6k8r"]
+resource_name = "Idle"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 0.5, 1, 0, 1.075, 0, 1, 1, 0, 1, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Hands")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.762, 0, 0.5, 1, 0, 0.954901, 0, 1, 1, 0, 0.762, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Hands/RightHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Hands/LeftHand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Legs/RightLeg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Legs/LeftLeg")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
+
+[sub_resource type="Animation" id="Animation_boad6"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Hands")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.762, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Hands/RightHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Hands/LeftHand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Legs/RightLeg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Legs/LeftLeg")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
+
+[sub_resource type="Animation" id="Animation_rgyib"]
+resource_name = "Walk"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Legs/RightLeg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.00833333, 1, 0.3, 0, 0, 0.258333, 1, 0.3, 0, -0.478319, 0.508333, 1, 0.3, 0, 0, 0.75, 1, 0.3, 0, 0.478, 1, 1, 0.3, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Legs/LeftLeg")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.3, 0, 0, 0.25, 1, -0.3, 0, 0.478, 0.5, 1, -0.3, 0, 0, 0.75, 1, -0.3, 0, -0.478, 1, 1, -0.3, 0, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Hands/RightHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.73, 0, 0, 0.25, 1, 0.73, 0, 0.478, 0.5, 1, 0.73, 0, 0, 0.75, 1, 0.73, 0, -0.478, 1, 1, 0.73, 0, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Hands/LeftHand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0, 0.25, 1, -0.73, 0, -0.478, 0.5, 1, -0.73, 0, 0, 0.741667, 1, -0.73, 0, 0.478, 0.991667, 1, -0.73, 0, 0)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Body")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 1, 0)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Hands")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0.762, 0)
+
+[sub_resource type="Animation" id="Animation_hg6s5"]
+resource_name = "Fall"
+length = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Hands")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.762, 0, 0.25, 1, 0, 1.533, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Hands/RightHand")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Hands/LeftHand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Legs/RightLeg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Legs/LeftLeg")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
+_data = {
+&"Fall": SubResource("Animation_hg6s5"),
+&"Idle": SubResource("Animation_g6k8r"),
+&"RESET": SubResource("Animation_boad6"),
+&"Walk": SubResource("Animation_rgyib")
+}
+
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_g6k8r")
 
 [node name="Body" type="Node3D" parent="."]
 
-[node name="Body" type="CSGSphere3D" parent="Body"]
+[node name="Body" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Body" type="CSGSphere3D" parent="Body/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0120878, 0)
 material = ExtResource("1_qjkh3")
 
-[node name="RightLeg" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.75, 0)
-radius = 0.15
-material = ExtResource("1_qjkh3")
-
-[node name="LeftLeg" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.75, 0)
-radius = 0.15
-material = ExtResource("1_qjkh3")
-
-[node name="RightHand" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, -0.25, 0)
-radius = 0.15
-material = ExtResource("1_qjkh3")
-
-[node name="LeftHand" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, -0.25, 0)
-radius = 0.15
-material = ExtResource("1_qjkh3")
-
-[node name="RightEye" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.15, -0.35)
+[node name="RightEye" type="CSGSphere3D" parent="Body/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.162088, -0.35)
 radius = 0.12
 material = ExtResource("2_g6k8r")
 
-[node name="Pupil" type="CSGSphere3D" parent="Body/RightEye"]
+[node name="Pupil" type="CSGSphere3D" parent="Body/Body/RightEye"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0868313)
 radius = 0.05
 material = ExtResource("3_boad6")
 
-[node name="LeftEye" type="CSGSphere3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.15, -0.35)
+[node name="LeftEye" type="CSGSphere3D" parent="Body/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.162088, -0.35)
 radius = 0.12
 material = ExtResource("2_g6k8r")
 
-[node name="Pupil" type="CSGSphere3D" parent="Body/LeftEye"]
+[node name="Pupil" type="CSGSphere3D" parent="Body/Body/LeftEye"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0868313)
 radius = 0.05
 material = ExtResource("3_boad6")
 
-[node name="Smile" type="Sprite3D" parent="Body"]
-transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, -0.115504, -0.493451)
+[node name="Smile" type="Sprite3D" parent="Body/Body"]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0, -0.103416, -0.493451)
 texture = ExtResource("4_rgyib")
 
-[node name="Helmet" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+[node name="Helmet" type="Node3D" parent="Body/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162088, 0)
 
-[node name="Combiner" type="CSGCombiner3D" parent="Helmet"]
+[node name="Combiner" type="CSGCombiner3D" parent="Body/Body/Helmet"]
 
-[node name="Body" type="CSGSphere3D" parent="Helmet/Combiner"]
+[node name="Body" type="CSGSphere3D" parent="Body/Body/Helmet/Combiner"]
 material = ExtResource("5_hg6s5")
 
-[node name="Subtract" type="CSGSphere3D" parent="Helmet/Combiner"]
+[node name="Subtract" type="CSGSphere3D" parent="Body/Body/Helmet/Combiner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085, -0.115)
 operation = 2
 radius = 0.45
 
+[node name="Hands" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.762, 0)
+
+[node name="RightHand" type="CSGSphere3D" parent="Body/Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.729578, 0, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="LeftHand" type="CSGSphere3D" parent="Body/Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73, 0, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="Legs" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="RightLeg" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="LeftLeg" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+radius = 0.15
+material = ExtResource("1_qjkh3")
+
+[node name="CameraRootOut" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73878, 0)
+
+[node name="CameraRootIn" type="Node3D" parent="CameraRootOut"]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRootOut/CameraRootIn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.473)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.150804, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.849196, 0)
 shape = SubResource("SphereShape3D_8t03j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_boad6")
+}
