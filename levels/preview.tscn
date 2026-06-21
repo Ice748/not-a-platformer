@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn6g8qkjplkk1"]
+
+[ext_resource type="PackedScene" uid="uid://52i60rx5qlt" path="res://player/player.tscn" id="1_kntbs"]
+[ext_resource type="Material" uid="uid://c66amrkgs23xi" path="res://materials/brown.tres" id="2_e2o86"]
+[ext_resource type="Material" uid="uid://cnw76vcuoxbmj" path="res://materials/green.tres" id="3_wy88s"]
+[ext_resource type="Texture2D" uid="uid://cbwc1a8nu814o" path="res://assets/explode.png" id="4_wy88s"]
+
+[sub_resource type="Environment" id="Environment_mqmyb"]
+background_mode = 1
+background_color = Color(0, 0.698039, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.366595, 0.366595, 0.366595, 1)
+
+[node name="Preview" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mqmyb")
+
+[node name="Player" parent="." instance=ExtResource("1_kntbs")]
+transform = Transform3D(0.942069, 0, -0.335419, 0, 1, 0, 0.335419, 0, 0.942069, -6.83723, -0.365746, -13.7622)
+enabled = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Island" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6662, -5.71966, 4.3905)
+use_collision = true
+
+[node name="Body" type="CSGSphere3D" parent="Island"]
+radius = 10.0
+material = ExtResource("2_e2o86")
+
+[node name="Subtract" type="CSGCylinder3D" parent="Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+operation = 2
+radius = 10.75
+height = 10.0
+material = ExtResource("3_wy88s")
+
+[node name="Island2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7781, -5.71966, 31.6231)
+use_collision = true
+
+[node name="Body" type="CSGSphere3D" parent="Island2"]
+radius = 10.0
+material = ExtResource("2_e2o86")
+
+[node name="Subtract" type="CSGCylinder3D" parent="Island2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+operation = 2
+radius = 10.75
+height = 10.0
+material = ExtResource("3_wy88s")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.95139, 0, -0.307988, 0, 1, 0, 0.307988, 0, -0.95139, -5.26727, 0, -17.4919)
+current = true
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -11.5
+offset_right = 65.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Not a Platformer"
+
+[node name="Explode" type="Sprite3D" parent="."]
+transform = Transform3D(3.97576, 0, 3.9305, 0, 5.59066, 0, -3.9305, 0, 3.97576, -1.14924, 1.74359, -15.5965)
+texture = ExtResource("4_wy88s")
+
+[node name="Explode2" type="Sprite3D" parent="."]
+transform = Transform3D(4.77181, 0, -2.91296, 0, 5.59066, 0, 2.91296, 0, 4.77181, -7.11877, -1.99597, -14.9936)
+texture = ExtResource("4_wy88s")
