@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://52i60rx5qlt"]
+[gd_scene load_steps=9 format=3 uid="uid://52i60rx5qlt"]
 
 [ext_resource type="Script" uid="uid://cikia54rs4i1c" path="res://player/player.gd" id="1_g6k8r"]
 [ext_resource type="Material" uid="uid://515isevifox3" path="res://materials/player_color.tres" id="1_qjkh3"]
@@ -6,198 +6,10 @@
 [ext_resource type="Material" uid="uid://cpipfur01jodg" path="res://materials/black.tres" id="3_boad6"]
 [ext_resource type="Texture2D" uid="uid://dke385fd3gmb1" path="res://assets/smile.png" id="4_rgyib"]
 [ext_resource type="Material" uid="uid://c66amrkgs23xi" path="res://materials/wood.tres" id="5_hg6s5"]
+[ext_resource type="AnimationLibrary" uid="uid://dyxehky16myjv" path="res://player/player_animation.res" id="7_boad6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8t03j"]
 radius = 0.763647
-
-[sub_resource type="Animation" id="Animation_g6k8r"]
-resource_name = "Idle"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Body")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 0.5, 1, 0, 1.075, 0, 1, 1, 0, 1, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Hands")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.762, 0, 0.5, 1, 0, 0.954901, 0, 1, 1, 0, 0.762, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Hands/RightHand")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Hands/LeftHand")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Legs/RightLeg")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Legs/LeftLeg")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
-
-[sub_resource type="Animation" id="Animation_boad6"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Body")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Hands")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.762, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Hands/RightHand")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Hands/LeftHand")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Legs/RightLeg")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Legs/LeftLeg")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
-
-[sub_resource type="Animation" id="Animation_rgyib"]
-resource_name = "Walk"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Legs/RightLeg")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.00833333, 1, 0.3, 0, 0, 0.258333, 1, 0.3, 0, -0.478319, 0.508333, 1, 0.3, 0, 0, 0.75, 1, 0.3, 0, 0.478, 1, 1, 0.3, 0, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Legs/LeftLeg")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.3, 0, 0, 0.25, 1, -0.3, 0, 0.478, 0.5, 1, -0.3, 0, 0, 0.75, 1, -0.3, 0, -0.478, 1, 1, -0.3, 0, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Hands/RightHand")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.73, 0, 0, 0.25, 1, 0.73, 0, 0.478, 0.5, 1, 0.73, 0, 0, 0.75, 1, 0.73, 0, -0.478, 1, 1, 0.73, 0, 0)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Hands/LeftHand")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0, 0.25, 1, -0.73, 0, -0.478, 0.5, 1, -0.73, 0, 0, 0.741667, 1, -0.73, 0, 0.478, 0.991667, 1, -0.73, 0, 0)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Body")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, 1, 0)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Hands")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0, 0.762, 0)
-
-[sub_resource type="Animation" id="Animation_hg6s5"]
-resource_name = "Fall"
-length = 0.25
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Hands")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.762, 0, 0.25, 1, 0, 1.533, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Body")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 1, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Hands/RightHand")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.729578, 0, 0)
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/Hands/LeftHand")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.73, 0, 0)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Legs/RightLeg")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.3, 0, 0)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/Legs/LeftLeg")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, -0.3, 0, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
-_data = {
-&"Fall": SubResource("Animation_hg6s5"),
-&"Idle": SubResource("Animation_g6k8r"),
-&"RESET": SubResource("Animation_boad6"),
-&"Walk": SubResource("Animation_rgyib")
-}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_g6k8r")
@@ -288,5 +100,5 @@ shape = SubResource("SphereShape3D_8t03j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_boad6")
+&"player_animation": ExtResource("7_boad6")
 }
